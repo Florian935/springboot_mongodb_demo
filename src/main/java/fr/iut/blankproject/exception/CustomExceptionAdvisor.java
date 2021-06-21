@@ -29,7 +29,7 @@ public class CustomExceptionAdvisor {
     @ResponseBody
     @ExceptionHandler({ArticleNotFoundException.class, UserNotFoundException.class, CommentaireNotFoundException.class})
     @ResponseStatus(NOT_FOUND)
-    protected String NotFoundExceptionHandler(Exception exception) {
+    protected String notFoundExceptionHandler(Exception exception) {
         return exception.getMessage();
     }
 
@@ -41,5 +41,5 @@ public class CustomExceptionAdvisor {
     @ResponseBody
     @ExceptionHandler({ArticleSaveException.class, UserSaveException.class, CommentaireSaveException.class})
     @ResponseStatus(UNPROCESSABLE_ENTITY)
-    protected String SaveExceptionHandler(Exception exception) { return exception.getMessage(); }
+    protected String saveExceptionHandler(Exception exception) { return exception.getMessage(); }
 }
